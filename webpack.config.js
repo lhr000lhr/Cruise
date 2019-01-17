@@ -1,30 +1,62 @@
-let path = require('path');
-let HtmlWebpackPlugin = require('html-webapck-plugin');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: './src/index.js',
   output: {
-    filename: 'build.js',
-    path: path.resolve("./build")
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, "dist")
   },
   devServer: {
-    contentBase: './build',
+    contentBase: path.join(__dirname, "dist"),
     port: 4200,
-    compress: true
+    compress: true,
+    historyApiFallback: true,
+    proxy: {
+      '/api/*': {
+        target: 'http://localhost:3001',
+        pathRewrite: {
+          '^/api': ''
+        },
+        secure: false
+      }
+    }
   },
   module: {
     rules: [
       {
-        test: /\.ts?$/,
-        loader: "awesome-typescript-loader"
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      },
+      {
+        test: /\.less$/,
+        use: [{
+          loader: "style-loader"
+        }, {
+          loader: "css-loader"
+        }, {
+          loader: "less-loader"
+        }]
+      },
+      {
+        test: require.resolve('jquery'),
+        use: [{
+          loader: 'expose-loader',
+          options: '$'
         }
+        ]
+      }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      title: 'CRULSE'
+      filename: 'index.html',
+      title: 'Cruise',
+      inject: true,
+      date: new Date()
     })
   ],
   mode: 'development',
-  resolve: {},
+  resolve: {}
 }
