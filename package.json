@@ -1,16 +1,23 @@
 {
-  "name": "mock-server",
+  "name": "CRULSE",
   "description": "A mock server for homework",
   "license": "MIT",
   "scripts": {
-    "start": "json-server --watch _mock/db.json --port 3001"
+    "start": "",
+    "json-server": "json-server --watch _mock/db.json --port 3001",
+    "dev": "webpack-dev-server --env development"
   },
-  "dependencies": {
-    "json-server": "^0.14.0"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "awesome-typescript-loader": "^5.2.1",
+    "html-webpack-plugin": "^3.2.0",
+    "json-server": "^0.14.2",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "source-map-loader": "^0.2.4",
     "typescript": "^3.2.2",
     "webpack": "^4.28.4",
-    "webpack-cli": "^3.2.1"
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
   }
 }
