@@ -2,21 +2,51 @@
 
 /* 全局定义 */
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{ margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; text-decoration:none; } :focus { outline: 0; } table { border-collapse: separate; border-spacing: 0; } caption, th, td { height:30px; font-weight: normal; } a img, iframe { border: none; } ol, ul { list-style: none; } input, textarea, select, button { font-size: 100%; font-family: inherit; } select { margin: inherit;} body { font-size:12px; font-family:"宋体";}
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.app-layout, body, html {
+  height: 100%;
+}
 
 body {
   font-family: "Avenir",Helvetica,Arial,sans-serif;
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #2d4054;
-  background-color: #fff;
+  font-size:   @font-size-base;
+  line-height: @font-line-height;
+  color:       @color-default;
+  background:  @body-background;
 }
 
 .container {
   padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  width: 1200px;
+  padding-left:  15px;
+  margin-right:  auto;
+  margin-left:   auto;
+  width:         1200px;
 }
 
+.row {
+  margin-left:  -8px;
+  margin-right: -8px;
+}
 
+.col {
+  padding-left:  8px;
+  padding-right: 8px;
+}
+
+.default-layout {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  background: #f0f2f5;
+  min-height: 0;
+}
+
+.main {
+  flex: auto;
+  min-height: 0;
+  margin-top: @header-height;
+  margin-bottom: @footer-height;
+}

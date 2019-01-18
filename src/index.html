@@ -8,36 +8,19 @@
 </head>
 <body>
 
-  <div class="app-layout">
-    <header>
-      <div class="container"></div>
-    </header>
+  <div class="app-layout default-layout">
+    ${require('./components/header/header.html')}
 
-    <div class="content container">
-      <div class="sidebar">
-        <div class="menu">
-          <ul>
-            <li>DASHBOARD</li>
-            <li>AGENT</li>
-            <li>MYCRISF</li>
-            <li>HELP</li>
-          </ul>
-        </div>
+    <div class="main container">
+        ${require('./components/sidebar/sidebar.html')}
+      <div class="content">
+        ${require('./components/overview/overview.html')}
+        ${require('./components/operation/operation.html')}
+        ${require('./components/resource/resource-panel.html')}
       </div>
-
-      <main>
-        <section></section>
-        <section></section>
-      </main>
     </div>
-
-    <footer>
-      <div class="container">
-        <span>@Copyright 2019 ThoughtWorks</span>
-      </div>
-    </footer>
+    ${require('./components/footer/footer.html')}
   </div>
 
-  <button id="requestBtn">test api</button>
 </body>
 </html>

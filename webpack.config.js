@@ -30,20 +30,38 @@ module.exports = {
       },
       {
         test: /\.less$/,
-        use: [{
-          loader: "style-loader"
-        }, {
-          loader: "css-loader"
-        }, {
-          loader: "less-loader"
-        }]
+        use: [
+          {
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader"
+          },
+          {
+            loader: "less-loader"
+          }
+        ]
       },
       {
-        test: require.resolve('jquery'),
-        use: [{
-          loader: 'expose-loader',
-          options: '$'
-        }
+        test: /\.html$/,
+        use: [
+          {
+            loader: 'html-loader',
+            options: {
+              minimize: true,
+              removeComments: false,
+              collapseWhitespace: false,
+              interpolate: 'require'
+            }
+          }
+        ],
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader'
+          }
         ]
       }
     ]
@@ -53,8 +71,7 @@ module.exports = {
       template: './src/index.html',
       filename: 'index.html',
       title: 'Cruise',
-      inject: true,
-      date: new Date()
+      inject: true
     })
   ],
   mode: 'development',
