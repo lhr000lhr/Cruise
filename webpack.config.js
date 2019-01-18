@@ -1,5 +1,9 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -24,25 +28,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader'
-      },
-      {
-        test: /\.less$/,
-        use: [
-          {
-            loader: "style-loader"
-          },
-          {
-            loader: "css-loader"
-          },
-          {
-            loader: "less-loader"
-          }
-        ]
-      },
-      {
         test: /\.html$/,
         use: [
           {
@@ -57,20 +42,54 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextWebpackPlugin.extract({
+          use: [
+            { loader: "css-loader" }
+          ]
+        })
+      },
+      {
+        test: /\.less$/,
+        use: ExtractTextWebpackPlugin.extract({
+          use: [
+            { loader: "css-loader" },
+            { loader: "less-loader" }
+          ]
+        })
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)\w*/,
         use: [
           {
             loader: 'file-loader'
+          }
+        ]
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'url-loader?limit=8192&name=./img/[hash].[ext]'
           }
         ]
       }
     ]
   },
   plugins: [
+    new ExtractTextWebpackPlugin({
+      filename: 'index.css'
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+    new CleanWebpackPlugin(['./dist']),
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: 'index.html',
-      title: 'Cruise',
       inject: true
     })
   ],

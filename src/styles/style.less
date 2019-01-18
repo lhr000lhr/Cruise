@@ -1,7 +1,7 @@
 @import 'theme.less';
 
 /* 全局定义 */
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{ margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; text-decoration:none; } :focus { outline: 0; } table { border-collapse: separate; border-spacing: 0; } caption, th, td { height:30px; font-weight: normal; } a img, iframe { border: none; } ol, ul { list-style: none; } input, textarea, select, button { font-size: 100%; font-family: inherit; } select { margin: inherit;} body { font-size:12px; font-family:"宋体";}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{ margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; text-decoration:none; } :focus { outline: 0; } table { border-collapse: separate; border-spacing: 0; } caption, th, td { height:30px; font-weight: normal; } a img, iframe { border: none; } ol, ul { list-style: none; } input, textarea, select, button { font-size: 100%; font-family: inherit; } select { margin: inherit;}
 *, *::before, *::after {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -11,7 +11,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 }
 
 body {
-  font-family: "Avenir",Helvetica,Arial,sans-serif;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
   font-size:   @font-size-base;
   line-height: @font-line-height;
   color:       @color-default;
@@ -45,8 +45,19 @@ body {
 }
 
 .main {
-  flex: auto;
-  min-height: 0;
   margin-top: @header-height;
   margin-bottom: @footer-height;
+  flex-direction: row;
+}
+
+.content {
+  flex: 1;
+}
+
+.iconfont-lg {
+  font-size: 20px;
+}
+
+.iconfont-sm {
+  font-size: 10px;
 }
