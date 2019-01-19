@@ -1,41 +1,36 @@
 @import '../../styles/theme.less';
-
 header {
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  align-items: center;
-  width: 100%;
-  height: @header-height;
-  background: @color-white;
-  box-shadow: 0 1px 10px rgba(0,0,0,.2);
-  z-index: 19;
-
-  .container {
-    position: relative;
-  }
-
-  .header-logo {
-    text-align: center;
-  }
-  .header-user {
     display: flex;
-    align-items: center;
-    position: absolute;
+    position: fixed;
     top: 0;
-    right: 0;
-    cursor: pointer;
-
-    .user-avatar {
-      display: inline-block;
-      width: 40px;
-      height: 40px;
+    left: 0;
+    align-items: center;
+    width: 100%;
+    height: @header-height;
+    background: @color-white;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, .2);
+    z-index: 19;
+    .container {
+        position: relative;
     }
-
-    .user-setting-btn {
-      margin-left: 10px;
-      font-size: 18px;
+    .header-logo {
+        text-align: center;
     }
-  }
+    .header-user {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        .user-avatar {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+        }
+        .user-setting-btn {
+            margin-left: 10px;
+            font-size: 18px;
+        }
+    }
 }

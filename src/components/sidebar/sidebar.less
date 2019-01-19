@@ -1,67 +1,56 @@
 @import '../../styles/theme.less';
-
 .sidebar {
-  position: relative;
-  flex: 0 0 200px;
-  max-width: 200px;
-  min-width: 200px;
-  width: 200px;
-  padding: 20px 0;
-  color: @color-white;
-  background-color: @color-black;
-
-  .menu-item {
-    padding: 5px 0;
-
-    .menu-item-link {
-      display: flex;
-      align-items: center;
-      height: 45px;
-      padding: 0 30px;
-      color: @color-white;
-
-      .menu-item-icon {
-        font-size: @font-size-lg;
-        margin-right: 15px;
-      }
-    }
-
-    .menu-item-link:hover {
-      color: @color-blue;
-    }
-  }
-    
-  .menu-item.men-item-selected .menu-item-link {
-    color: @color-blue;
-    background-color: @color-menu-selected;
-  }
-
-  .history {
-    position: absolute;
-    bottom: 20px;
-    padding: 0 10px;
-
-    .history-title {
-      margin-bottom: 10px;
-      font-size: 24px;
-      color: #ccc;
-    }
-
-    .history-panel {
-      font-size: @font-size-sm;
-      color: #999;
-
-      .history-item {
-        line-height: 20px;
-
-        .history-item-link {
-          color: #999;
-          cursor: pointer;
+    position: relative;
+    flex: 0 0 270px;
+    max-width: 270px;
+    min-width: 270px;
+    width: 270px;
+    padding: 20px 0;
+    color: @color-white;
+    background-color: @color-black;
+    .menu-item {
+        padding: 5px 0;
+        .menu-item-link {
+            display: flex;
+            align-items: center;
+            height: 45px;
+            padding: 0 30px;
+            color: @color-white;
+            .menu-item-icon {
+                font-size: @font-size-lg;
+                margin-right: 15px;
+            }
         }
-        .history-item-link:hover {
-          color: @color-blue;
+        .menu-item-link:hover {
+            color: @color-blue;
         }
-      }
     }
-  }
+    .menu-item.men-item-selected .menu-item-link {
+        color: @color-blue;
+        background-color: @color-menu-selected;
+    }
+    .history {
+        position: absolute;
+        bottom: 20px;
+        padding: 0 10px;
+        .history-title {
+            margin-bottom: 10px;
+            font-size: 24px;
+            color: #ccc;
+        }
+        .history-panel {
+            font-size: @font-size-sm;
+            color: #999;
+            .history-item {
+                line-height: 20px;
+                .history-item-link {
+                    color: #999;
+                    cursor: pointer;
+                }
+                .history-item-link:hover {
+                    color: @color-blue;
+                }
+            }
+        }
+    }
 }

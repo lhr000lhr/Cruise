@@ -1,0 +1,61 @@
+@import '../../styles/theme.less';
+.overview {
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+    &-item {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    &-card {
+        position: relative;
+        padding: 15px 15px;
+        height: 116px;
+        color: @color-white;
+        background-color: #fff;
+        overflow: hidden;
+        .row {
+            height: 100%;
+        }
+        .col-6 {
+            height: 100%;
+        }
+        &-icon {
+            position: absolute;
+            top: 0;
+            left: 84px;
+            font-size: 114px;
+            opacity: 0.2;
+        }
+        .icon-cog {
+            animation: circle 2s infinite linear;
+            -webkit-animation: circle 2s infinite linear;
+        }
+        &-title {
+            font: 18px bold;
+        }
+        &-remark {
+            position: absolute;
+            right: 0;
+            bottom: -15px;
+            font-size: 48px;
+        }
+    }
+    &-card-building {
+        background: @color-yellow;
+    }
+    &-card-idle {
+        background: @color-green;
+    }
+    &-card-totle {
+        color: @color-default;
+        text-align: center;
+        &-title {
+            margin-top: 10px;
+            margin-bottom: 35px;
+            font-size: 12px;
+        }
+        &-remark {
+            font-size: 20px;
+        }
+    }
+}
