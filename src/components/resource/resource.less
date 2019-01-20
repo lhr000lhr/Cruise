@@ -4,16 +4,40 @@
       display: flex;
       flex-flow: row nowrap;
       position: relative;
+      margin-top: 15px;
       padding: 15px 18px;
       font-size: 14px;
       background-color: @color-white;
 
       &-icon-wrap {
         width: 100px;
+
+        img {
+          max-width: 80px;
+        }
       }
 
       &-article{
         width: calc(100% - 100px);
+
+        .resource-card-description {
+
+          .icon-desktop {
+            font-size: 16px;
+            color: @color-gray;
+          }
+        }
+
+        .resource-card-operation {
+
+          
+          .icon-plus {
+            padding: 5px;
+            font-size: 18px;
+            color: @color-white;
+            background-color: @color-blue;
+          }
+        }
       }
   }
 
